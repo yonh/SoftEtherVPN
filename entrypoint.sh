@@ -20,14 +20,14 @@ if [[ $USERS ]]
 then
   echo '# <use the password specified at -e USERS>'
 else
-  : ${USERNAME:=user$(cat /dev/urandom | tr -dc '[0-9][a-z]' | fold -w 4 | head -n 1)}
+  : ${USERNAME:=user_$(cat /dev/urandom | tr -dc '[0-9a-z' | fold -w 4 | head -n 1)}
   echo \# ${USERNAME}
   
   if [[ $PASSWORD ]]
   then
     echo '# <use the password specified at -e PASSWORD>'
   else
-    PASSWORD=$(cat /dev/urandom | tr -dc '[0-9][a-z][A-Z]' | fold -w 20 | head -n 1)
+    PASSWORD=$(cat /dev/urandom | tr -dc '[0-9a-zA-Z' | fold -w 20 | head -n 1)
     echo \# ${PASSWORD}
   fi
 fi  
