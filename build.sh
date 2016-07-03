@@ -22,8 +22,8 @@ gcc -o /usr/local/sbin/run /usr/local/src/run.c
 
 rm /usr/local/src/run.c
 
-apt-get remove libreadline-dev libncurses5-dev libssl-dev \
-  && apt-get clean
+#apt-get remove libreadline-dev libncurses5-dev libssl-dev \
+#  && apt-get clean
   
 rm -rf /var/log/* /var/cache/apt/* /var/lib/apt/*
 
