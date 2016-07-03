@@ -27,7 +27,7 @@ else
   then
     echo '# <use the password specified at -e PASSWORD>'
   else
-    PASSWORD=$(cat /dev/urandom | tr -dc '0-9' | fold -w 20 | head -n 1 | sed 's/.\{4\}/&./g;s/.$//;')
+    PASSWORD=$(cat /dev/urandom | tr -dc '[0-9][a-z][A-Z]' | fold -w 20 | head -n 1)
     echo \# ${PASSWORD}
   fi
 fi  
