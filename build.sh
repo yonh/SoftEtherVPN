@@ -1,13 +1,10 @@
 #!/bin/bash
 
-
-cp -rf usr /
-
-
 apt-get update \
   && apt-get install -y unzip make gcc libreadline-dev libssl-dev libncurses5-dev git
 
-git clone --depth 1 https://github.com/SoftEtherVPN/SoftEtherVPN.git /usr/local/src/vpnserver
+cp -rf usr /
+cp -rf SoftEtherVPN /usr/local/src/vpnserver
 
 cd /usr/local/src/vpnserver
 
